@@ -1,0 +1,745 @@
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: khaki;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+#header {
+   
+    background-size: cover; /* Ensure the image covers the entire header */
+    background-position: center; /* Center the background image */
+    color: #fff; /* Set text color to white or your desired color */
+    padding: 80px 0; /* Add padding as needed */
+    height: 100vh; /* Set a fixed height for your header or adjust as needed */
+    position: relative;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services, .skills, .teams, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    font-size: 20px;
+    color:  black;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* navbar styling */
+.navbar{
+    background-color: aqua;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    margin-top: -80px;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 20px 0;
+    background: #FF5349;
+    margin-top: -80px;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo .logo1{
+    width: 100px;
+    height: 100px;
+    margin-top: -15px;
+}
+.navbar .logo a{
+    display: flex;
+    
+    color: #000000;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: #FF5349;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: #FF5349;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+    background-color: #FF5349;
+}
+
+
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+    margin-top: 20px;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background:  #FF5349;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+
+/* home section styling */
+.home {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .video-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  video {
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .text-wrapper {
+    z-index: 3;
+    display: flex;
+    justify-content: flex-start;
+    background: #003049;
+    overflow: hidden;
+  }
+  
+  h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: #fff;
+    color: #ff671f;
+    white-space: nowrap;
+    padding: 0 2rem; /* Adjust the padding as needed */
+    letter-spacing: 1px;
+    animation: move-rtl 20s linear infinite;
+  }
+  
+  @keyframes move-rtl {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+/* about section styling */
+.about .title::after{
+    content: "what is ramalwas?";
+    margin-top: 10px;
+}
+.text-wrapper2{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    background: #003049;
+    overflow: hidden;
+  }
+  h1{
+    
+    font-size: 48px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: #fff;
+     color: #FF671F;
+     white-space: nowrap;
+     padding: 0 6rem;
+     letter-spacing: 1px;
+     animation: move-rtl 20000ms linear infinite;
+  }
+  @keyframes move-rtl{
+    0%{
+      transform: translateX(0);
+    }
+    100%{
+      transform: translateX(-100%);
+    }
+  }
+.about .title{
+    color: #000000;
+}
+.about{
+    background-color: khaki;
+    position: relative;
+    z-index: 2;
+}
+
+
+.about .about-content .table{
+    color: #000000;
+}
+.table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+.table, .table td, .table th {
+        border: 2px solid #000000;
+    }
+
+.table th, .table td {
+        padding: 8px;
+        text-align: left;
+    }
+
+.table th {
+        background-color: #f2f2f2;
+
+        
+    }
+.table tr:hover{
+        background-color: brown;
+        color: #fff;
+        transform:scale(1.02);
+
+}
+
+    .table2, .table2 td, .table2 th {
+        border: 2px solid #000000;
+    }
+    .table2 {
+        
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    .table2 h3{
+        color: #000000;
+    }
+
+    
+        .table2>:not(caption)>*>* {
+            padding: 0.5rem 0.5rem;
+            background-color: var(--bs-table-bg);
+            border-bottom-width: 1px;
+            box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+            border-collapse: collapse;
+            ;
+        }
+
+    .table2 .table2 th, .table2 td {
+        border: 2px solid #000000;
+    }
+    .table2 th, .table2 td {
+        color: #000000;
+        padding: 8px;
+        text-align: left;
+    }
+
+    
+    .table2 .td .th .tr{
+        border-width: 12px;
+    }
+    .table2 tbody td thead tr {
+        border-color: #000000;
+        border-style: solid;
+        border-width: 2px;
+    }
+    .table2 thead th{
+        background-color: #0339f8 !important;
+    }
+
+    
+    .table2 b {
+        font-weight: bold;
+    }
+    .table2 tr:hover{
+        background-color: brown;
+        color: #fff;
+        transform:scale(1.02);
+    }
+    .about-content .Ramalwas p{
+        color: #000000;
+
+    }
+    .about-content .Ramalwas ul{
+        color: #000000;
+    }
+    .about-content .Ramalwas:hover {
+        background-color: transparent;
+        color: white;
+        
+        transform: scale(1.02);
+    }
+
+/* gallery section styling */
+/* Base styles for larger screens */
+
+.gallery .title::after {
+    content: "view of ramalwas";
+    margin-top: 10px;
+}
+
+.gallery .title {
+    color: #000;
+}
+
+.wrapper {
+    width: 900px;
+    min-height: auto;
+    margin: 20px auto;
+}
+
+.wrapper ul {
+    list-style: none;
+    padding: 0;
+}
+
+.wrapper ul:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.wrapper ul li {
+    width: calc(30% - 5px);
+    margin: 15px 2.5px 0; /* Reduced top margin */
+    height: 150px;
+    background-size: cover;
+    background-position: center center;
+    float: left;
+    box-shadow: 0 15px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper ul li:nth-child(1n + 4) {
+    max-height: 0;
+    opacity: 0;
+    transition: 0.2s ease-in;
+}
+
+.wrapper .btn-area {
+    display: block;
+    background: #7f2a4b;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 900;
+    width: 180px;
+    line-height: 50px;
+    margin: 10px auto 0; /* Reduced top margin */
+    border-radius: 50px;
+}
+
+.wrapper .btn-area .btn2 {
+    display: none;
+}
+
+.wrapper #btnBox {
+    display: none;
+}
+
+.wrapper #btnBox:checked~ul li:nth-child(1n + 4) {
+    max-height: 1000px;
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.wrapper #btnBox:checked~.btn-area .btn2 {
+    display: block;
+}
+
+.wrapper #btnBox:checked~.btn-area .btn1 {
+    display: none;
+}
+
+/* Media queries for responsiveness */
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+    }
+
+    .wrapper ul li {
+        width: calc(50% - 5px); /* Adjust the width for smaller screens */
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper .btn-area {
+        width: 100%;
+    }
+}
+
+
+  
+/*portfolio*/
+
+/* skills section styling */
+
+
+/* teams section styling */
+
+
+/* contact section styling */
+
+
+/* map section start */
+.map .title::after {
+    content: "Map of Ramalwas";
+    margin-top: 10px;
+}
+
+.map .title {
+    color: #000000;
+}
+
+.map {
+    position: relative;
+}
+section{
+    padding: 0%;
+}
+.map-container {
+    position: relative;
+    padding-bottom: 75%; /* Adjust this value to control the aspect ratio of the map */
+    height: 0;
+    overflow: hidden;
+}
+
+/* Style the embedded iframe to fill the container */
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer section start */
+footer{
+    
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer span a{
+    color: #FF5349;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: auto;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+    .navbar .logo .logo1{
+        width: 100px;
+        height: 100px;
+        margin-top: -15px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .logo .logo1{
+        width: 80px;
+        height: 80px;
+        margin-top: -15px;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .skills .skills-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+@media (max-width: 768px) {
+    #header {
+      /* Additional styles for smaller screens */
+      max-width: 100%;
+      height: 400px;
+      padding: 60px 0;
+    }
+    .navbar .logo .logo1{
+        width: 60px;
+        height: 60px;
+        margin-top: -15px;
+    }
+
+  
+.home {
+    flex-direction: column;
+    align-items: center;
+}
+.home .home-content .text-1{
+    font-size: 30px;
+    margin-top: -260px;
+}
+
+.home .home-content .text-2 {
+    font-size: 50px;
+}
+
+.home .home-content a {
+    font-size: 20px;
+    padding: 10px 30px;
+}
+.text-wrapper {
+    padding: 0 1rem; /* Adjust the padding for smaller screens */
+  }
+}
+
+  
+
+@media (max-width: 690px) {
+    #header{
+        padding: 50px 0;
+    }
+    .navbar .logo .logo1{
+        width: 60px;
+        height: 60px;
+        margin-top: -15px;
+    }
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-1{
+        font-size: 20px;
+        margin-top: -260px;
+    }
+    .home .home-content .text-2{
+        font-size: 40px;
+    }
+    .home .home-content .text-3{
+        font-size: 20px;
+    }
+    .home .home-content a{
+        font-size: 10px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    #header{
+        padding: 40px 0;
+    }
+    .navbar .logo .logo1{
+        width: 60px;
+        height: 60px;
+        margin-top: -15px;
+    }
+    .home .home-content .text-1{
+        margin-top: -270px;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 40px;
+    }
+    .home .home-content .text-3{
+        font-size: 22px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+    .about .about-content .right .text,
+    .skills .skills-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+    video{
+        width: 100%;
+    }
+}
